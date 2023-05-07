@@ -1,3 +1,4 @@
 build/*
 output/*
 *.ds_store
+.vscode/*

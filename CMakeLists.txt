@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(remotefirmatatest VERSION 0.1.0)
+set(CMAKE_OSX_ARCHITECTURES "x86_64")
 
 include(CTest)
 enable_testing()
@@ -44,15 +45,5 @@ message(STATUS "LIBFIRMATA: [${LIBFIRMATA}]")
 message(STATUS "LIBREMOTE_WIRING: [${LIBREMOTE_WIRING}]")
 message(STATUS "LIBSERIAL_WIRING: [${LIBSERIAL_WIRING}]")
 
-#link_directories("${CMAKE_SOURCE_DIR}/lib")
-
-#find_library(LIBFIRMATA firmata "lib")
-#target_link_libraries(exec ${LIBFIRMATA})
-
-#add_dependencies(firmata serial_wiring)
 target_link_libraries(remotefirmatatest ${LIBFIRMATA} ${LIBREMOTE_WIRING} ${LIBSERIAL_WIRING})
-
-#target_link_libraries(remotefirmatatest LINK_PUBLIC remote_wiring firmata serial_wiring pthread)
-#add_dependencies(remotefirmatatest remote_wiring firmata serial_wiring)
-
 ##
